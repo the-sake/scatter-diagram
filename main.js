@@ -1,4 +1,4 @@
-let sakeData = [
+const sakeData = [
   {
     "Product": "하쿠시카 준마이 팩",
     "NihonShudo": 2,
