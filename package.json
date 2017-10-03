@@ -1,7 +1,10 @@
 {
-  "name": "scatterーdiagram",
+  "name": "scatter_diagram",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Gim YoungPhil <youngphil.gim@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "dev": "python -m SimpleHTTPServer 8080"
+  }
 }
