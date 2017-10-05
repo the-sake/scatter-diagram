@@ -1,27 +1,67 @@
-const sakeData = [
+const typeData = [
   {
-    "Product": "하쿠시카 준마이 팩",
-    "NihonShudo": 2,
-    "Acidity": 1.4
+    name: "x11",
+    color: "#a7d317",
+    x: 0,
+    y: 0
   },
   {
-    "Product": "하쿠시카 준마이 팩1",
-    "NihonShudo": 2,
-    "Acidity": 1.6
+    name: "x12",
+    color: "#e95696",
+    x: 350,
+    y: 0
   },
   {
-    "Product": "하쿠시카 준마이 팩2",
-    "NihonShudo": 6,
-    "Acidity": 1.5
+    name: "x13",
+    color: "#d3e96b",
+    x: 0,
+    y: 350
   },
   {
-    "Product": "하쿠시카 준마이 팩3",
-    "NihonShudo": 9,
-    "Acidity": 1.2
+    name: "x14",
+    color: "#ee93bc",
+    x: 350,
+    y: 350
   }
-];
+]
 
+d3.select('svg')
+  .append('g')
+  .attr('id', 'backgroundG')
+  .attr('transform', 'rotate(30 450 150)')
+  .selectAll('rect')
+  .data(typeData)
+  .enter()
+  .append('rect')
+  .attr('class', 'types')
+  .attr('x', d => d.x)
+  .attr('y', d => d.y)
+  .attr('width', 350)
+  .attr('height', 350)
+  .style('fill', d => d.color);
 
+  const sakeData = [
+    {
+      "Product": "하쿠시카 준마이 팩",
+      "NihonShudo": 2,
+      "Acidity": 1.4
+    },
+    {
+      "Product": "하쿠시카 준마이 팩1",
+      "NihonShudo": 2,
+      "Acidity": 1.6
+    },
+    {
+      "Product": "하쿠시카 준마이 팩2",
+      "NihonShudo": 6,
+      "Acidity": 1.5
+    },
+    {
+      "Product": "하쿠시카 준마이 팩3",
+      "NihonShudo": 9,
+      "Acidity": 1.2
+    }
+  ];
 
 const xExtent = [0.4, 2.8];
 const yExtend = [20, -30];
@@ -32,7 +72,7 @@ const yScale = d3.scaleLinear().domain(yExtend).range([0, 500]);
 const xAxis = d3.axisBottom(xScale).tickSize(500);
 d3.select("svg")
   .append("g")
-  .attr("id", "xAxisG")
+  .attr("id", "xAxisGf")
   // .attr("transform", "translate(0,499)")
   .call(xAxis);
 
